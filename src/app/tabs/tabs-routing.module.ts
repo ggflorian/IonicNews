@@ -18,6 +18,26 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'news',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../news/news.module').then(m => m.NewsPageModule)
+          }
+        ]
+      },
+      {
+        path: 'portfolio',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../portfolio/portfolio.module').then(m => m.PortfolioPageModule)
+          }
+        ]
+      },
+      {
         path: 'tab2',
         children: [
           {
